@@ -41,8 +41,8 @@ app.get('/', function (req, res) {
 /**
  * App listen.
  */
-
-app.listen(80, function () {
+var port = process.env.PORT || 80
+app.listen(port, function () {
   var addr = app.address();
   console.log('   app listening on http://' + addr.address + ':' + addr.port);
 });
