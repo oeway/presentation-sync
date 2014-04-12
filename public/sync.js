@@ -1,4 +1,4 @@
-var socket = io.connect('https://presentation-sync.herokuapp.com');
+var socket = io.connect('https://presentation-sync.herokuapp.com',{'hostname':'presentation-sync.herokuapp.com'});
 socket.emit('add user', 'oeway');
 socket.emit('new message',document.URL);
 // Whenever the server emits 'new message', update the chat body
