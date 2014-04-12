@@ -84,11 +84,18 @@ $(function() {
       $typingMessages.remove();
     }
 
+    var e = /http:\/\/([A-Za-z0-9\.-_]{2,}\.)+[A-Za-z]{2,}(\/.+)/,
+    var s = data.message
+    if (s.match(e)) {
+      var url = RegExp['$&'];
+      s = s.replace(url, '<a href="' + url + '">' + url + '</a>');
+    }
+
     var colorStyle = 'style="color:' + getUsernameColor(data.username) + '"';
     var usernameDiv = '<span class="username"' + colorStyle + '>' +
       data.username + '</span>';
     var messageBodyDiv = '<span class="messageBody">' +
-      data.message + '</span>';
+      s + '</span>';
 
     var typingClass = data.typing ? 'typing' : '';
     var messageDiv = '<li class="message ' + typingClass + '">' +
