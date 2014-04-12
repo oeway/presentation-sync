@@ -20,7 +20,7 @@ var numUsers = 0;
 
 io.on('connection', function (socket) {
   var addedUser = false;
-
+  var lastMsg = {username:'',message:''};
   // when the client emits 'new message', this listens and executes
   socket.on('new message', function (data) {
     console.log('%s : %s', socket.username, data);
@@ -29,6 +29,12 @@ io.on('connection', function (socket) {
       username: socket.username,
       message: data
     });
+
+    lastMsg = {
+      username: socket.username,
+      message: data
+    });
+
   });
 
   // when the client emits 'add user', this listens and executes
@@ -43,6 +49,7 @@ io.on('connection', function (socket) {
     socket.emit('login', {
       numUsers: numUsers
     });
+    socket.emit('new message', lastMsg);
     // echo globally (all clients) that a person has connected
     socket.broadcast.emit('user joined', {
       username: socket.username,
