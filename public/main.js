@@ -233,7 +233,7 @@ $(function() {
     // Display the welcome message
     var message = "Presentation Sync for Google Presentation &mdash; ";
     log(message, {
-      prepend: true
+      prepend: false
     });
     addParticipantsMessage(data);
   });
