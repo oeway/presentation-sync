@@ -38,7 +38,7 @@ $(function() {
   // Sets the client's username
   function setUsername () {
     username = cleanInput($usernameInput.val().trim());
-
+    username = username||'Anonymous'
     // If the username is valid
     if (username) {
       $loginPage.fadeOut();
