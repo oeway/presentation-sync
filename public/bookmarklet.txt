@@ -1,0 +1,7 @@
+javascript:(
+function(){
+var socket_script = document.createElement('script');
+socket_script.src = "https://presentation-sync.herokuapp.com/socket.io/socket.io.js";
+(document.head||document.documentElement).insertBefore(socket_script);
+}
+)();
