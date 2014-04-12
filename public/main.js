@@ -222,6 +222,9 @@ $(function() {
     $inputMessage.focus();
   });
 
+  $( document ).ready(function() {
+    setUsername();
+  });
   // Socket events
 
   // Whenever the server emits 'login', log the login message
