@@ -1,7 +1,7 @@
 {
   "name": "google-presentation-sync",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
     "socket.io": "1.0.x",
     "express": "3.x"
