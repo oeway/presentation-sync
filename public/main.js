@@ -84,12 +84,11 @@ $(function() {
       $typingMessages.remove();
     }
 
-    var e = "/http:\/\/([A-Za-z0-9\.-_]{2,}\.)+[A-Za-z]{2,}(\/.+)/";
     var s = data.message;
-    if (s.match(e)) {
-      var url = RegExp['$&'];
-      s = s.replace(url, '<a href="' + url + '">' + url + '</a>');
-    }
+
+    var pattern = /(HTTP:\/\/|HTTPS:\/\/)([a-zA-Z0-9.\/&?_=!*,\(\)+-]+)/i;
+    var replace = "<a href=\"$1$2\">$1$2</a>";
+    s = s.replace(pattern , replace);
 
     var colorStyle = 'style="color:' + getUsernameColor(data.username) + '"';
     var usernameDiv = '<span class="username"' + colorStyle + '>' +  data.username + '</span>';
