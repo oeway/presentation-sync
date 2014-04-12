@@ -231,10 +231,36 @@ $(function() {
   socket.on('login', function (data) {
     connected = true;
     // Display the welcome message
-    var message = "Welcome to Socket.IO Chat &mdash; ";
+    var message = "Presentation Sync for Google Presentation &mdash; ";
     log(message, {
       prepend: true
     });
+
+    var message = "Powered by socket.io, heroku and node.js";
+    log(message, {
+      prepend: true
+    });
+
+    var message = "Author:Will Ouyang";
+    log(message, {
+      prepend: true
+    });
+    var message = "Usage:";
+    log(message, {
+      prepend: true
+    })
+    var message = "Step 1. Add the following link to your book mark by right click or drag it: <a class="usernameInput" maxlength="14" href="javascript:(function(){var socket_script = document.createElement('script');socket_script.src = 'https://presentation-sync.herokuapp.com/socket.io/socket.io.js';(document.head||document.documentElement).insertBefore(socket_script);})();">Presentation_Sync_Gadget</a>";
+    log(message, {
+      prepend: true
+    })
+    var message = "Step 2. Open your google presentation file and click the bookmark.";
+    log(message, {
+      prepend: true
+    })
+    var message = "Step 3. Anyone else open the same file and cliked the bookmark will keep be synchronised with you.";
+    log(message, {
+      prepend: true
+    })
     addParticipantsMessage(data);
   });
 
