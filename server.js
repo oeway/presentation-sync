@@ -33,7 +33,7 @@ io.on('connection', function (socket) {
     lastMsg = {
       username: socket.username,
       message: data
-    });
+    };
 
   });
 
