@@ -87,7 +87,7 @@ $(function() {
     var s = data.message;
 
     var pattern = /(HTTP:\/\/|HTTPS:\/\/)([a-zA-Z0-9.\/&?_=!*#,\(\)+-]+)/i;
-    var replace = "<a href=\"$1$2\">$1$2</a>";
+    var replace = "<a href=\"$1$2\" target='_blank'>$1$2</a>";
     s = s.replace(pattern , replace);
 
     var colorStyle = 'style="color:' + getUsernameColor(data.username) + '"';
